@@ -87,4 +87,17 @@ h1 {
     margin-bottom: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
+.url-list {
+    max-height: 200px;
+    overflow-y: scroll;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 /* ... rest of your CSS ... */
