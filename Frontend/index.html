@@ -5,14 +5,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Save Career Sites</h1>
+    <nav class="navigation">
+        <div class="nav-brand">Save Career Sites</div>
+        <button type="button" id="viewButton">View</button>
+    </nav>
+    <div class="container-center">
         <form id="urlForm">
-            <label for="urlInput">Enter Career Page URL:</label>
-            <input type="text" id="urlInput" name="urlInput" required>
-            <button type="button" id="saveButton">Save URL</button>
+            <div class="padding"></div>
+            <div class="container">
+                <label for="urlInput">Enter Career Page URL:</label>
+                <input type="text" id="urlInput" name="urlInput" required>
+                <div class="container-center btn">
+                    <button type="button" id="saveButton">Save URL</button>
+                </div>
+            </div>
         </form>
-        <p id="message"></p>
+        <div class="container-center">
+            <p id="message"></p>
+        </div>
+        <div id="urlList" class="url-list hidden"></div>
     </div>
 
     <script src="main.js"></script>
