@@ -34,16 +34,45 @@ app.post('/saveUrl', [
     }
     const url = req.body.url;
 
-    // Execute an INSERT query
-    pool.query('INSERT INTO urls (url) VALUES (?)', [url], (error, results) => {
+    // Check if url exist
+    const checkQuery = 'SELECT COUNT(*) AS count FROM urls WHERE url = ?';
+    pool.query(checkQuery, [url], (error, results) => {
         if (error) {
-            console.error(error);
-            res.status(500).json({ error: 'An error occurred while saving the URL.' });
-        } else {
-            res.status(200).json({ message: 'URL saved successfully.' });
+            console.error('Error checking URL:', error);
+            return res.status(500).json({ message: 'An error occurred.' });
         }
+    const count = results[0].count;
+    if (count > 0) {
+        return res.status(400).json({ message: 'URL already exists.' });
+    } else {
+        // Execute an INSERT query
+        pool.query('INSERT INTO urls (url) VALUES (?)', [url], (error, results) => {
+            if (error) {
+                console.error(error);
+                return res.status(500).json({ error: 'An error occurred while saving the URL.' });
+            } else {
+                return res.status(200).json({ message: 'URL saved successfully.' });
+            }
+        });
+    }
     });
 });
+
+app.get('/getSavedUrls', (req, res) => {
+    const selectQuery = 'SELECT * FROM urls';
+
+    pool.query(selectQuery, (error, results) => {
+        if (error) {
+            console.error('Error fetching URLs:', error);
+            return es.status(500).json({ message: 'An error occurred.' });
+        }
+
+        const urls = results.map(result => result.url);
+        return res.status(200).json({ urls });
+    });
+});
+
+
 
 // Start the server
 app.listen(port, () => {
