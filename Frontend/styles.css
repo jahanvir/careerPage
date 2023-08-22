@@ -1,0 +1,103 @@
+/* styles.css */
+:root {
+    --primary-color:rgb(179, 147, 200)
+    ;  
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.navigation{
+    padding: 1rem;
+    border-bottom-left-radius: 1rem;
+    margin: auto;
+    box-shadow: 0 1px 4px rgba(141,161,176,.15);
+    background-color: var(--primary-color);
+    font-weight: bold;
+    /* padding: 0.5rem 2rem 0.5rem 2rem ; */
+    margin: auto;
+    max-width: 900px;
+    padding: 1.5rem;
+    display: flex;
+}
+
+.padding{
+    height: 200px;
+}
+.btn{
+    max-width: 15rem;
+    padding: 15px;
+}
+
+
+button{
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    font-size: large;
+    /* margin-top: 10px; */
+}
+.container-center{
+    max-width: 600px;
+    margin: auto;
+    font-size: large;
+}
+
+#message{
+    padding-left: 1.8rem;
+}
+
+#urlInput{
+    width: 340px;
+    font-size: large;
+    border-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+#viewButton{
+    position: absolute;
+    right: 300px;
+    /* width: 30px; */
+}
+
+/* button{
+    background-color: var(--primary-color);
+    border: none;
+    color: black;
+    display: block;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px -3px var(--primary-color);
+    text-align: center;
+    margin: 1rem auto 2rem auto;
+    
+} */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the form contents horizontally */
+}
+
+h1 {
+    text-align: left; /* Align the header to the top left */
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.url-list {
+    max-height: 200px;
+    overflow-y: scroll;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ... rest of your CSS ... */

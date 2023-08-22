@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Page URL Saver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-brand">Save Career Sites</div>
+        <button type="button" id="viewButton">View</button>
+    </nav>
+    <div class="container-center">
+        <form id="urlForm">
+            <div class="padding"></div>
+            <div class="container">
+                <label for="urlInput">Enter Career Page URL:</label>
+                <input type="text" id="urlInput" name="urlInput" required>
+                <div class="container-center btn">
+                    <button type="button" id="saveButton">Save URL</button>
+                </div>
+            </div>
+        </form>
+        <div class="container-center">
+            <p id="message"></p>
+        </div>
+        <div id="urlList" class="url-list hidden"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
