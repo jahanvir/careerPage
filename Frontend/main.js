@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 message.textContent = 'URL saved successfully.';
+            } else if (response.status === 400) {
+                message.textContent = 'URL already exists.';
             } else {
                 message.textContent = 'Error saving URL.';
             }
